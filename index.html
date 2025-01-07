@@ -1,0 +1,31 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WebSocket Timestamp</title>
+</head>
+<body>
+  <h1>WebSocket Linux Timestamp</h1>
+  <div id="timestamp"></div>
+
+  <script>
+    //     Connect to the WebSocket server
+    //     Determine the correct WebSocket scheme (ws:// or wss://) based on the current protocol
+    const wsScheme = (window.location.protocol === "https:") ? "wss://" : "ws://";
+
+    // Build the full WebSocket URL using the current host and (optionally) path
+    const socketUrl = wsScheme + window.location.host + "/ws/";
+    // If you want a specific path (e.g., /ws), append it: wsScheme + window.location.host + "/ws"
+
+    const socket = new WebSocket(socketUrl);
+
+        // const socket = new WebSocket("ws://10.24.2.70:8765/");
+
+    socket.onmessage = (event) => {
+      // Update the page with the received timestamp
+      document.getElementById("timestamp").innerText = event.data;
+    };
+  </script>
+</body>
+</html>
