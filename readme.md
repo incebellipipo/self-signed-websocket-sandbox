@@ -1,3 +1,7 @@
+<a href="http://www.wtfpl.net/"><img
+       src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png"
+       width="80" height="15" alt="WTFPL" /></a>
+
 # WebSocket Certification with Nginx
 
 This project demonstrates how to use Nginx to secure WebSocket connections with SSL/TLS certificates. It includes a Python server that serves both HTTP and WebSocket connections, and an Nginx configuration to proxy and secure these connections.
